@@ -220,3 +220,18 @@ The project includes interactive API documentation. Start the server and navigat
 1. **SQLite for Unit Tests**: When running automated tests using `python manage.py test`, Django automatically configures the database connection to use an in-memory SQLite database. This speeds up test execution and bypasses the need for a running local MySQL server during CI/CD or test validation.
 2. **Case-Insensitive Search**: The search query param checks both the name and email fields using case-insensitive substring matching (`__icontains`).
 3. **Roles**: Roles are stored as plain strings (VARCHAR(100)) to allow flexible role designations.
+
+
+
+The Page not found (404) error is expected because there is no route configured for the empty root path (/).
+
+According to your URL routing configuration in 
+
+urls.py
+, the available endpoints are:
+
+Swagger API Documentation: http://127.0.0.1:8000/swagger/
+ReDoc API Documentation: http://127.0.0.1:8000/redoc/
+Users API Endpoint: http://127.0.0.1:8000/users/
+Django Admin Panel: http://127.0.0.1:8000/admin/
+To see the API in action, try opening http://127.0.0.1:8000/swagger/ or http://127.0.0.1:8000/users/ in your browser.
